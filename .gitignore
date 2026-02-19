@@ -1,0 +1,56 @@
+# ----------------------------
+# RPM Build Artifacts
+# ----------------------------
+
+rpmbuild/
+RPMS/
+SRPMS/
+BUILD/
+BUILDROOT/
+SOURCES/*.tar.gz
+SOURCES/*.tgz
+SOURCES/*.zip
+*.rpm
+*.src.rpm
+
+# Ignore source archives
+examples/**/SOURCES/*.tar.gz
+examples/**/SOURCES/*.tgz
+examples/**/SOURCES/*.zip
+
+# ----------------------------
+# Logs
+# ----------------------------
+
+*.log
+
+# ----------------------------
+# macOS
+# ----------------------------
+
+.DS_Store
+
+# ----------------------------
+# IDE / Editor
+# ----------------------------
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ----------------------------
+# Docker
+# ----------------------------
+
+*.cache
+docker-cache/
+
+# ----------------------------
+# Temporary Files
+# ----------------------------
+
+tmp/
+temp/
+
+
