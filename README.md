@@ -55,6 +55,27 @@ sudo rpm -ivh rpmbuild/RPMS/x86_64/redis-*.rpm
 
 For more detail, see `examples/redis/README.md`.
 
+## Inspect the RPM in a container
+
+If you want to verify the built RPM in a clean environment, launch a Fedora
+container and mount the output directory:
+
+```sh
+docker run --rm -it \
+  -v "$PWD/rpmbuild/RPMS:/rpms:ro" \
+  fedora:40 \
+  bash -lc "dnf -y install /rpms/aarch64/redis-*.rpm && redis-server --version"
+```
+
+To drop into a shell with the RPMs mounted:
+
+```sh
+docker run --rm -it \
+  -v "$PWD/rpmbuild/RPMS:/rpms:ro" \
+  fedora:40 \
+  /bin/bash
+```
+
 ## Final rpmbuild state
 
 ```bash
